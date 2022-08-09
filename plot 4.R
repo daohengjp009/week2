@@ -1,7 +1,6 @@
 NEI <- readRDS("summarySCC_PM25.rds") 
 SCC <- readRDS("Source_Classification_Code.rds")
-coal <- grep("Coal",SCC$EI.Sector)
-subcoal <- SCC[coal,]
+subcoal <- SCC[grep("Coal",SCC$EI.Sector),]
 coal.code <- SCC$SCC
 merge.coal <- merge(NEI, subcoal, sort = coal.code)
 merge.coal$year <- format(merge.coal$year, format = "%Y")
