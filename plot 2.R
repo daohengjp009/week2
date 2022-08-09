@@ -1,5 +1,0 @@
-NEI <- readRDS("summarySCC_PM25.rds") 
-sub24510 <- unique(subset(NEI, fips == 24510, c("Emissions", "year")))
-sum24510 <- tapply(sub24510$Emissions,sub24510$year, sum)
-sum24510df <- data.frame(Total.Emission = sum24510 , Year = names(sum24510))
-plot1 <- barplot(sum24510df$Total.Emission, main = "The Comparsion Between Total Emission From 1999 To 2008 in Baltimore City", ylab = "Total Emission", xlab = "Year",names.arg = c("1999", "2002", "2005", "2008"))
